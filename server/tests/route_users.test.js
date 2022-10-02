@@ -18,7 +18,7 @@
 //       created_at: 1664333866923,
 //       updated_at: 1664333866923,
 //       email: 'john@doe.com',
-//       image:
+//       image_url:
 //         'https://www.gravatar.com/avatar/639bae9ac6b3e1a84cebb7b403297b79?d=retro&f=y',
 //     }
 
@@ -28,7 +28,7 @@
 //       created_at: 1664333866923,
 //       updated_at: 1664333866923,
 //       email: 'jane@doe.com',
-//       image:
+//       image_url:
 //         'https://www.gravatar.com/avatar/128b6697ec11075134e554b0d6e098bd?d=retro&f=y',
 //     }
 

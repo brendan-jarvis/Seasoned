@@ -13,7 +13,7 @@ import Header from './Header'
 
 import { clearLoggedInUser, updateLoggedInUser } from '../actions/loggedInUser'
 import { useCacheUser } from '../auth0-utils'
-import { getUser } from '../api'
+import { getUser } from '../apis/users'
 import { ThemeProvider } from '@mui/material/styles'
 import { theme } from '../styles/theme'
 import { fetchSeason } from '../actions'
@@ -28,12 +28,14 @@ function App() {
   useEffect(() => {
     if (!isAuthenticated) {
       dispatch(clearLoggedInUser())
-    } else {
+    }
+    if (isAuthenticated) {
       getAccessTokenSilently()
         .then((token) => {
           getUser(token)
         })
         .then((userInDb) => {
+          console.log('userInDb', userInDb)
           userInDb
             ? dispatch(updateLoggedInUser(userInDb))
             : navigate('/register')

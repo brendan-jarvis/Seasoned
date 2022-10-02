@@ -11,7 +11,7 @@ exports.seed = function (knex) {
           created_at: new Date(),
           updated_at: new Date(),
           email: 'john@doe.com',
-          image:
+          image_url:
             'https://www.gravatar.com/avatar/639bae9ac6b3e1a84cebb7b403297b79?d=retro&f=y',
         },
         {
@@ -20,7 +20,7 @@ exports.seed = function (knex) {
           created_at: new Date(),
           updated_at: new Date(),
           email: 'jane@doe.com',
-          image:
+          image_url:
             'https://www.gravatar.com/avatar/128b6697ec11075134e554b0d6e098bd?d=retro&f=y',
         },
         {
@@ -29,7 +29,7 @@ exports.seed = function (knex) {
           created_at: new Date(),
           updated_at: new Date(),
           email: 'john@smith.com',
-          image:
+          image_url:
             'https://www.gravatar.com/avatar/e877c56e4fb621e81fd30dbd114a545b?d=retro&f=y',
         },
         {
@@ -38,7 +38,7 @@ exports.seed = function (knex) {
           created_at: new Date(),
           updated_at: new Date(),
           email: 'jane@smith.com',
-          image:
+          image_url:
             'https://www.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?d=retro&f=y',
         },
       ])

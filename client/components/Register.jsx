@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
+import { useAuth0 } from '@auth0/auth0-react'
+
 import { addUser } from '../api'
 import { updateLoggedInUser } from '../actions/loggedInUser'
 
@@ -10,7 +12,8 @@ import md5 from 'md5'
 import { Button, TextField, Box, Typography } from '@mui/material'
 
 function Register() {
-  const user = useSelector((state) => state.loggedInUser)
+  const { user } = useAuth0()
+  const loggedInUser = useSelector((state) => state.loggedInUser)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [form, setForm] = useState({
@@ -19,8 +22,8 @@ function Register() {
   const [errorMsg, setErrorMsg] = useState('')
 
   useEffect(() => {
-    if (user.auth0_id) navigate('/')
-  }, [user])
+    if (loggedInUser.username) navigate('/')
+  }, [loggedInUser])
 
   const handleChange = (evt) => {
     setForm({
@@ -35,12 +38,12 @@ function Register() {
     const gravatar = `https://www.gravatar.com/avatar/${md5(user.email)}`
 
     const userInfo = {
-      auth0_id: user.auth0_id,
+      auth0_id: loggedInUser.auth0_id,
       email: user.email,
-      image: gravatar,
+      image_url: gravatar,
       ...form,
     }
-    addUser(userInfo, user.token)
+    addUser(userInfo, loggedInUser.token)
       .then(() => dispatch(updateLoggedInUser(userInfo)))
       .catch((err) => setErrorMsg(err.message))
   }

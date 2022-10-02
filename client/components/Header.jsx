@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import { Link, Box } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCarrot } from '@fortawesome/free-solid-svg-icons'
@@ -21,7 +22,8 @@ export default function Footer() {
     >
       <Link
         underline="none"
-        href="/"
+        component={RouterLink}
+        to="/"
         variant="h2"
         sx={{
           padding: '20px 0',
