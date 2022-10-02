@@ -94,7 +94,7 @@ Socialize, eat together, music and honey time. (on toast)
 
 ## User stories
 
-- [ ] See what vegetables/fruits are in season.
+- [ ] See what produce is in season.
 - [ ] Filter recipes based on the season.
 - [x] See the whole recipe after clicking on the recipe card
 - [x] Search recipe according to vege and/or fruits.
@@ -105,7 +105,7 @@ Socialize, eat together, music and honey time. (on toast)
 
 - [ ] Able to navigate around the app seamlessly
 - [ ] Able to hide the nav
-- [ ] Filter options for vegetarian, vegan, gluten-free (and maybe some other options).
+- [ ] Filter options for dietary preferences.
 - [ ] Additional filters to recipes, e.g. cuisine.
 - [ ] Favourites
 - [ ] Display trending and most popular favourites
@@ -121,11 +121,11 @@ Socialize, eat together, music and honey time. (on toast)
 
 | Name         | Content                                                                                    |
 | ------------ | ------------------------------------------------------------------------------------------ |
-| id           | Unique ID for the fruit/vegetable                                                          |
-| name         | Name of the fruit/vegetable for use with the external API                                  |
-| display_name | Name of the fruit/vegetable for use on Seasoned, includes the Maori word (where available) |
-| type         | Type of the produce, i.e. fruit or vegetables                                              |
-| image        | Image of the fruit/vegetable <b>TODO: host these locally, switch to open-source images</b> |
+| id           | Unique ID for the fruit/veges                                                          |
+| name         | Name of the fruit/veges for use with the external API                                  |
+| display_name | Name of the fruit/veges for use on Seasoned, includes the Maori word (where available) |
+| type         | Type of the produce, i.e. fruit or veggies                                              |
+| image        | Image of the fruit/veges <b>TODO: host these locally, switch to open-source images</b> |
 
 ### produce_available_months
 
