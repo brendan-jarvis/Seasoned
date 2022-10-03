@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling, faBook } from '@fortawesome/free-solid-svg-icons'
 import { postFavouriteProduct } from '../apis/produce'
 import { fetchRecipes } from '../actions'
+import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
 export default function Recipe() {
   const { id, ingredient } = useParams()
@@ -31,15 +32,15 @@ export default function Recipe() {
     return word === 'Vegan' || word === 'Vegetarian' || word === 'Gluten-Free'
   })
 
-   useEffect(
-     () => recipes.length === 0 && dispatch(fetchRecipes(ingredient)),
-     []
-   )
+  useEffect(
+    () => recipes.length === 0 && dispatch(fetchRecipes(ingredient)),
+    []
+  )
 
   const handleFavourite = async (e) => {
     const favourite = { label: label, url: url }
     setChecked(e.target.checked)
-    await postFavouriteProduct(favourite, user.auth0_id)
+    await postFavouriteProduct(favourite, user.auth0Id)
   }
 
   return (
@@ -76,25 +77,47 @@ export default function Recipe() {
             </Typography>
             <img width={'100%'} src={image} alt={label} />
 
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={checked}
-                    onChange={handleFavourite}
-                    icon={<FavoriteBorder />}
-                    checkedIcon={<Favorite />}
-                    sx={{
-                      color: pink[800],
-                      '&.Mui-checked': {
-                        color: pink[600],
-                      },
-                    }}
-                  />
-                }
-                label="Add to Favourite"
-              />
-            </FormGroup>
+            <IfAuthenticated>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={checked}
+                      onChange={handleFavourite}
+                      icon={<FavoriteBorder />}
+                      checkedIcon={<Favorite />}
+                      sx={{
+                        color: pink[800],
+                        '&.Mui-checked': {
+                          color: pink[600],
+                        },
+                      }}
+                    />
+                  }
+                  label="Add to Favourites"
+                />
+              </FormGroup>
+            </IfAuthenticated>
+            <IfNotAuthenticated>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      disabled
+                      icon={<FavoriteBorder />}
+                      checkedIcon={<Favorite />}
+                      sx={{
+                        color: pink[800],
+                        '&.Mui-checked': {
+                          color: pink[600],
+                        },
+                      }}
+                    />
+                  }
+                  label="Please login to add to Favourites"
+                />
+              </FormGroup>
+            </IfNotAuthenticated>
           </Box>
         </>
       )}
@@ -131,12 +154,12 @@ export default function Recipe() {
               </Typography>
               <Box>
                 <Button
-                sx={{
-                  textAlign: "center",
-                  marginTop: "30px",
-                  bgcolor: "primary",
-                  padding: "8px 16px"
-                }}
+                  sx={{
+                    textAlign: 'center',
+                    marginTop: '30px',
+                    bgcolor: 'primary',
+                    padding: '8px 16px',
+                  }}
                   variant="outlined"
                   endIcon={<OpenInNew />}
                   target="_blank"

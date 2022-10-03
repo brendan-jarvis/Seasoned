@@ -21,7 +21,7 @@ function Favourites() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getFavourites(user.auth0_id))
+    dispatch(getFavourites(user.auth0Id))
   }, [])
 
   return (
@@ -95,7 +95,7 @@ function Favourites() {
                   size="large"
                   underline="hover"
                   onClick={() =>
-                    dispatch(removeFavouriteAction(favourite.id, user.auth0_id))
+                    dispatch(removeFavouriteAction(favourite.id, user.auth0Id))
                   }
                 ></DeleteIcon>
               </TableCell>
