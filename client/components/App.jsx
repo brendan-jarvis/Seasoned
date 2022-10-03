@@ -11,6 +11,7 @@ import Header from './Header'
 import Recipe from './Recipe'
 import Register from './Register'
 import SearchRecipe from './SearchRecipe'
+import NotFound from './NotFound'
 
 import { clearLoggedInUser, updateLoggedInUser } from '../actions/loggedInUser'
 import { useCacheUser } from '../auth0-utils'
@@ -69,6 +70,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="/recipes/:ingredient/:id" element={<Recipe />} />
           <Route path="/favourites" element={<Favourites />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />
