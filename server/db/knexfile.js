@@ -52,7 +52,7 @@ module.exports = {
       port: process.env.PGPORT,
       user: process.env.PGUSER,
       password: process.env.PGPASSWORD,
-      database: process.env.DATABASE_URL,
+      database: `postgresql://${process.env.PGUSER}:${process.env.PGPASSWORD}@${process.env.PGHOST}:${process.env.PGPORT}/${process.env.PGDATABASE}`,
     },
     pool: {
       min: 2,
