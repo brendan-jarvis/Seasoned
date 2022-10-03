@@ -1,4 +1,5 @@
 const express = require('express')
+
 const checkJwt = require('../auth0')
 
 const db = require('../db/users')
@@ -6,14 +7,13 @@ const router = express.Router()
 
 // GET /api/v1/users
 router.get('/', checkJwt, (req, res) => {
-  const auth0_id = req.auth?.sub
+  const auth0_id = req.user?.sub
 
   if (!auth0_id) {
     res.send(null)
   } else {
     db.getUser(auth0_id)
       .then((user) => {
-        console.log('user', user)
         res.json(user ? user : null)
       })
       .catch((err) => res.status(500).send(err.message))
@@ -22,7 +22,7 @@ router.get('/', checkJwt, (req, res) => {
 
 // POST /api/v1/users
 router.post('/', checkJwt, (req, res) => {
-  const auth0_id = req.auth?.sub
+  const auth0_id = req.user?.sub
   const { username, email, image_url } = req.body
   const userDetails = {
     auth0_id,
