@@ -4,7 +4,7 @@ import {
 } from '../actions/loggedInUser'
 
 const emptyUser = {
-  auth0_id: '',
+  auth0Id: '',
   username: '',
 }
 
