@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getFavourites, removeFavouriteAction, editFavourite } from '../actions'
 import DeleteIcon from '@mui/icons-material/Delete'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import {
   Link,
   Table,
@@ -71,7 +72,8 @@ function Favourites() {
                   rel="noreferrer"
                   underline="hover"
                 >
-                  {favourite.label}
+                  {favourite.label}{' '}
+                  <OpenInNewIcon color="inherit" fontSize="inherit" />
                 </Link>
               </TableCell>
 
