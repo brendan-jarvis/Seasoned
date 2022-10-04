@@ -1,7 +1,9 @@
-# Seasoned – The seasonal veggie recipe
+<h1 style="text-align:center"> Seasoned </h1>
+<h2 style="text-align:center"> The seasonal veggie recipe </h2>
 
 ---
-
+<details>
+<summary>Pre-project Wellbeing Report</summary>
 ## How are we feeling?
 
 Slightly stressed but driven to want to see this project succeed, mostly feeling good and confident.
@@ -57,6 +59,37 @@ Design lead: Ash
 Socialize, eat together, music and honey time. (on toast)
 
 ---
+</details>
+
+## User stories
+
+- [ ] Style the NotFound.jsx page.
+- [ ] Style the Favourites.jsx page when the user isn't signed in.
+- [ ] Optimise images used in ProductCard.jsx - these are restricted to 140px wide and tend to max out at 280px. A folder with 140x280 WEBP optimised images could be created in /public/images/optimised and the 'produce' table can then be updated to include a column with a link to the optimised image.
+- [ ] User recipe ratings
+- [ ] Autocomplete search form with in-season produce (optional)
+- [ ] The ability to filter recipes based on the season or to exclude out of season produce from recipe results.
+- [ ] Additional nav options that can be shown/hidden. These could allow the user to view/browse what's in season by month or season.
+- [ ] Display trending and most popular favourites
+- [ ] Comments
+- [ ] User photos
+- [ ] Investigate and implement compression of bundle.js.
+- [ ] Write a suitable robots.txt so crawlers know how to crawl and/or index the website.
+
+## Completed user stories
+
+- [x] See what produce is in season.
+- [x] See the whole recipe after clicking on the recipe card.
+- [x] Search recipe according to vege and/or fruits.
+- [x] Able to navigate around the app seamlessly.
+- [x] Able to login/logout with Auth0.
+- [x] Filter options for dietary preferences.
+- [x] Filter options for meal type, i.e. breakfast, lunch, dinner.
+- [x] Display details to recipes, e.g. cuisine.
+- [x] Able to view and delete Favourites.
+- [x] To do list in Favourites.
+
+---
 
 ## Tech
 
@@ -76,9 +109,10 @@ Socialize, eat together, music and honey time. (on toast)
 2. Pull from <b>main branch</b>.
 3. Resolve merge conflicts.
 4. Submit a pull request to the <b>dev branch</b>.
-5. Pull request from <b>dev branch</b> into main is reviewed by the team and our wonderful volunteer reviewer.
+5. Pull request from <b>dev branch</b> into main is reviewed by the team and may be reviewed by our wonderful volunteer.
 6. Git keeper merges reviewed pull request to <b>main branch</b>.
-7. Deployment to Heroku from main.
+7. Deployment to Railway App from main to: 
+https://seasoned-production.up.railway.app/
 
 ---
 
@@ -90,33 +124,7 @@ Socialize, eat together, music and honey time. (on toast)
   - Content changes based on user input into the search form and their filters.
   - Build query string for external API based on user input.
   - UseParams to find the selected recipe and load the recipe details into the detailed view component.
-
----
-
-## Completed user stories
-
-- [x] See what produce is in season.
-- [x] See the whole recipe after clicking on the recipe card.
-- [x] Search recipe according to vege and/or fruits.
-- [x] Able to navigate around the app seamlessly.
-- [x] Able to login/logout with Auth0.
-- [x] Filter options for dietary preferences.
-- [x] Filter options for meal type, i.e. breakfast, lunch, dinner.
-- [x] Display details to recipes, e.g. cuisine.
-- [x] Favourites.
-- [x] To do list.
-
-### Stretch
-
-#### TODO: user stories
-
-- [ ] User recipe ratings
-- [ ] Autocomplete search form with in-season produce
-- [ ] Filter recipes based on the season.
-- [ ] Additional nav options that can be shown/hidden
-- [ ] Display trending and most popular favourites
-- [ ] Comments
-- [ ] User photos
+- TODO: add the other store items into the schema here.
 
 ---
 
