@@ -18,8 +18,8 @@ function favourites(state = [], action) {
     case EDIT_FAVOURITE:
       // TODO: Edit the state
       return state.map((favourite) => {
-        if (favourite.id === payload) {
-          favourite.done = !favourite.done
+        if (favourite.id === payload.id) {
+          favourite = payload
         }
         return favourite
       })

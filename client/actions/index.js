@@ -2,7 +2,7 @@ import { getRecipes } from '../apis/recipes'
 import { getProduce, getAvailableProduct } from '../apis/produce'
 import {
   getUserFavourites,
-  patchFavouriteDone,
+  patchFavourite,
   removeFavourite,
 } from '../apis/favourites'
 
@@ -143,19 +143,18 @@ export function removeFavouriteAction(id, auth0_id) {
   }
 }
 
-export function changeFavourite(id) {
+export function changeFavourite(updatedFavourite) {
   return {
     type: EDIT_FAVOURITE,
-    payload: id,
+    payload: updatedFavourite,
   }
 }
 
 export function editFavourite(id, recipeObj) {
-  changeFavourite(id)
   return async (dispatch) => {
     try {
-      await patchFavouriteDone(id, recipeObj)
-      return dispatch(changeFavourite(id))
+      await patchFavourite(id, recipeObj)
+      return dispatch(changeFavourite(recipeObj))
     } catch (err) {
       console.log('editFavourite - ', err.message)
     }

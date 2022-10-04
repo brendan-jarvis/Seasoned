@@ -16,6 +16,7 @@ import {
   Paper,
   Checkbox,
   Typography,
+  Rating,
 } from '@mui/material'
 
 function Favourites() {
@@ -68,6 +69,16 @@ function Favourites() {
                   color="inherit"
                 >
                   <Typography variant="h5" color="inherit" gutterBottom>
+                    Rating
+                  </Typography>
+                </TableCell>
+                <TableCell
+                  width="33%"
+                  variant="h1"
+                  align="center"
+                  color="inherit"
+                >
+                  <Typography variant="h5" color="inherit" gutterBottom>
                     Delete
                   </Typography>
                 </TableCell>
@@ -105,7 +116,21 @@ function Favourites() {
                       }
                     />
                   </TableCell>
-                  {/* <TableCell>{favourite.rating}</TableCell> */}
+                  <TableCell align="center">
+                    <Rating
+                      precision={0.5}
+                      name="rating"
+                      value={favourite.rating}
+                      onChange={(event, newValue) => {
+                        dispatch(
+                          editFavourite(favourite.id, {
+                            ...favourite,
+                            rating: newValue,
+                          })
+                        )
+                      }}
+                    />
+                  </TableCell>
                   <TableCell align="center">
                     <DeleteIcon
                       size="large"

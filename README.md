@@ -64,9 +64,9 @@ Socialize, eat together, music and honey time. (on toast)
 ## User stories
 
 - [ ] Style the NotFound.jsx page.
+- [ ] Fix responsive styling on Favourites.jsx to account for rating field.
 - [ ] Style the Favourites.jsx page when the user isn't signed in.
 - [ ] Optimise images used in ProductCard.jsx - these are restricted to 140px wide and tend to max out at 280px. A folder with 140x280 WEBP optimised images could be created in /public/images/optimised and the 'produce' table can then be updated to include a column with a link to the optimised image.
-- [ ] User recipe ratings
 - [ ] Autocomplete search form with in-season produce (optional)
 - [ ] The ability to filter recipes based on the season or to exclude out of season produce from recipe results.
 - [ ] Additional nav options that can be shown/hidden. These could allow the user to view/browse what's in season by month or season.
@@ -78,6 +78,7 @@ Socialize, eat together, music and honey time. (on toast)
 
 ## Completed user stories
 
+- [x] User recipe ratings
 - [x] See what produce is in season.
 - [x] See the whole recipe after clicking on the recipe card.
 - [x] Search recipe according to vege and/or fruits.
