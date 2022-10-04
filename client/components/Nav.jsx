@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-import { useNavigate, Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import { useSelector } from 'react-redux'
 
@@ -12,9 +12,7 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 
 function Nav() {
-  const user = useSelector((state) => state.loggedInUser)
   const { logout, loginWithRedirect } = useAuth0()
-  const navigate = useNavigate()
 
   const handleLogOff = (e) => {
     e.preventDefault()

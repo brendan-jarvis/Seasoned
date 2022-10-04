@@ -43,12 +43,7 @@ function App() {
 
   // ---------- Show products of current season based on current month when loading ---------- //
 
-  useEffect(() => {
-    dispatch(fetchSeason(currentSeason()))
-  }, [])
-
-  const currentSeason = () => {
-    const currentMonth = new Date().getMonth() + 1
+  function currentSeason(currentMonth) {
     switch (currentMonth) {
       case 9 || 10 || 11:
         return 'spring'
@@ -60,6 +55,13 @@ function App() {
         return 'winter'
     }
   }
+
+  useEffect(() => {
+    const currentMonth = new Date().getMonth() + 1
+
+    dispatch(fetchSeason(currentSeason(currentMonth)))
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <Nav />
