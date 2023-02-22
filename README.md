@@ -2,6 +2,9 @@
 <h2 style="text-align:center"> The seasonal veggie recipe </h2>
 
 ---
+
+<p style="text-align:center"><a>https://seasoned-food.herokuapp.com/</a><p>
+<p style="text-align:center"><a>https://seasoned-production.up.railway.app/</a><p>
 <details>
 <summary>Pre-project Wellbeing Report</summary>
 ## How are we feeling?
@@ -59,6 +62,7 @@ Design lead: Ash
 Socialize, eat together, music and honey time. (on toast)
 
 ---
+
 </details>
 
 ## User stories
@@ -78,7 +82,6 @@ Socialize, eat together, music and honey time. (on toast)
 
 ## Completed user stories
 
-- [x] User recipe ratings
 - [x] See what produce is in season.
 - [x] See the whole recipe after clicking on the recipe card.
 - [x] Search recipe according to vege and/or fruits.
@@ -89,6 +92,7 @@ Socialize, eat together, music and honey time. (on toast)
 - [x] Display details to recipes, e.g. cuisine.
 - [x] Able to view and delete Favourites.
 - [x] To do list in Favourites.
+- [x] User recipe ratings
 
 ---
 
@@ -112,8 +116,8 @@ Socialize, eat together, music and honey time. (on toast)
 4. Submit a pull request to the <b>dev branch</b>.
 5. Pull request from <b>dev branch</b> into main is reviewed by the team and may be reviewed by our wonderful volunteer.
 6. Git keeper merges reviewed pull request to <b>main branch</b>.
-7. Deployment to Railway App from main to: 
-https://seasoned-production.up.railway.app/
+7. Deployment to Railway App from main to:
+   https://seasoned-production.up.railway.app/
 
 ---
 
