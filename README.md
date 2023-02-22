@@ -116,8 +116,7 @@ Socialize, eat together, music and honey time. (on toast)
 4. Submit a pull request to the <b>dev branch</b>.
 5. Pull request from <b>dev branch</b> into main is reviewed by the team and may be reviewed by our wonderful volunteer.
 6. Git keeper merges reviewed pull request to <b>main branch</b>.
-7. Deployment to Railway App from main to:
-   https://seasoned-production.up.railway.app/
+7. Deployment to Railway App from main to: https://seasoned.herokuapp.com/ or https://seasoned-production.up.railway.app/
 
 ---
 
