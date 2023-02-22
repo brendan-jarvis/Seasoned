@@ -8,6 +8,8 @@ import App from './components/App'
 
 import store from './store'
 
+console.log(process.env)
+
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Auth0Provider
