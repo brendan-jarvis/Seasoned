@@ -3,7 +3,7 @@
 
 ---
 
-<p style="text-align:center"><a>https://seasoned-food.herokuapp.com/</a><p>
+<p style="text-align:center"><a>https://seasoned.herokuapp.com/</a><p>
 <p style="text-align:center"><a>https://seasoned-production.up.railway.app/</a><p>
 <details>
 <summary>Pre-project Wellbeing Report</summary>
